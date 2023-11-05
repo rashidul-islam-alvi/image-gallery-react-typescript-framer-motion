@@ -6,7 +6,7 @@ export const AddIcon = () => {
       stroke="white"
       strokeWidth={0.1}
       xmlns="http://www.w3.org/2000/svg"
-      className="md:h-[300px] h-[150px] "
+      className="md:h-[150px] h-[90px] "
     >
       <g id="SVGRepo_bgCarrier" strokeWidth="0 "></g>
       <g

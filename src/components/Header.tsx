@@ -24,9 +24,11 @@ const Header: React.FC<HeaderProps> = ({ handleDeleteClick }) => {
       }}
       className="flex flex-col items-center gap-10 mb-10"
     >
-      <h2 className="text-6xl cursor-pointer md:text-9xl"> wellgram</h2>
+      <h2 className="text-6xl cursor-pointer md:text-8xl"> wellgram</h2>
 
-      <div className="flex items-center gap-5 text-xl uppercase md:text-4xl">
+      <div
+        className={`  flex items-center gap-5 text-md sm:text-lg  uppercase md:text-3xl`}
+      >
         <h2>{numberOfSelectedImages} items are selected</h2>
         <button
           onClick={handleDeleteClick}

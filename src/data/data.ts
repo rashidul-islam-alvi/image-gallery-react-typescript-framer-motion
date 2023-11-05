@@ -4,7 +4,7 @@ export const images = [
     imageUrl: "/pictures/portrait1.jpg",
     imageAlt: "portrait1",
     isSelected: false,
-    isFeatured: false,
+    isFeatured: true,
   },
   {
     id: 2,

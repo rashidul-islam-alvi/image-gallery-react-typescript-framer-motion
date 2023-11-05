@@ -5,6 +5,7 @@ import { AddIcon } from "../icons/AddIcon";
 import { CheckIcon } from "../icons/CheckIcon";
 import { StarFilledIcon } from "../icons/StarFilledIcon";
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 export const Gallery = () => {
   const {
@@ -41,14 +42,19 @@ export const Gallery = () => {
   };
 
   const handleDeleteClick = () => {
-    const selectedImageIds = images
-      .filter((image) => image.isSelected)
-      .map((image) => image.id);
-    removeImages(selectedImageIds);
+    const selectedImages = images.filter((image) => image.isSelected);
+    const featuredSelected = selectedImages.some((image) => image.isFeatured);
+
+    if (featuredSelected) {
+      toast.error("Cannot delete a featured image that is selected");
+    } else {
+      const selectedImageIds = selectedImages.map((image) => image.id);
+      removeImages(selectedImageIds);
+    }
   };
 
   return (
-    <div className="flex flex-col items-center w-full px-5 py-10 md:px-0">
+    <div className="relative flex flex-col items-center w-full p-5 ">
       <Header handleDeleteClick={handleDeleteClick} />
 
       <motion.div
@@ -56,7 +62,7 @@ export const Gallery = () => {
         initial={{ x: 2000 }}
         animate={{ x: 0 }}
         transition={{ ease: "backOut", delay: 0.4, duration: 0.9 }}
-        className="flex flex-col gap-4 sm:grid-cols-2 sm:grid md:w-5/6 md:grid-cols-3 lg:grid-cols-4"
+        className="grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-4"
       >
         <AnimatePresence>
           {images.map((item, index) => (
@@ -74,10 +80,10 @@ export const Gallery = () => {
               onDrop={() => handleDrop(index)}
               onDragStart={() => handleDragStart(index)}
               onDragOver={(e) => e.preventDefault()}
-              className={`w-full z-0 h-[350px] ${
+              className={` z-0 h-[110px] md:h-[200px] ${
                 item.isFeatured ? "col-span-2  border-2 border-[#ffa371] " : ""
-              } relative  hover:border-2 cursor-pointer ${
-                item.isSelected ? "border-2" : "border-0"
+              } relative border-[1px] border-transparent  hover:border-white cursor-pointer ${
+                item.isSelected ? "border-[1px] border-white" : "border-0"
               }`}
             >
               <div
@@ -98,7 +104,7 @@ export const Gallery = () => {
 
               <img
                 src={item.imageUrl}
-                className={`object-cover w-full h-full`}
+                className={`object-cover  w-full h-full`}
                 alt={item.imageAlt}
                 loading="lazy"
               />
@@ -106,7 +112,7 @@ export const Gallery = () => {
           ))}
         </AnimatePresence>
         <div
-          className={`border-2 flex justify-center items-center cursor-pointer h-[350px]  text-3xl`}
+          className={`border-2 flex justify-center items-center cursor-pointer h-[110px] md:h-[200px]  text-3xl`}
         >
           <AddIcon />
         </div>

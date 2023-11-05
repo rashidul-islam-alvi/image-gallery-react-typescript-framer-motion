@@ -4,7 +4,7 @@ import { Image } from "../interfaces";
 import { ImageContext } from "./ImageContext";
 
 export function ImageProvider({ children }: { children: React.ReactNode }) {
-  // use this if you want all the images to restore when you refresh
+  // use this if you want to restore all the images  when you refresh
   // const [localStorageImages, setLocalStorageImages] = useState<Image[]>(images);
 
   // use this if you dont want to restore when you refresh
@@ -21,6 +21,7 @@ export function ImageProvider({ children }: { children: React.ReactNode }) {
     localStorage.setItem("images", JSON.stringify(localStorageImages));
   }, [localStorageImages]);
 
+  //update localStorageImages
   function updateLocalStorageImages(images: Image[]) {
     setLocalStorageImages(images);
   }
