@@ -12,25 +12,18 @@ export const useImageGalleryFunctions = () => {
 
   const handleDrop = (dropIndex: number) => {
     if (dragIndex === null) return;
-
     const updatedImages = [...images];
-    const draggedItem = updatedImages[dragIndex];
     const droppedItem = updatedImages[dropIndex];
-
-    // Swap the items using destructuring assignment
-    [updatedImages[dragIndex], updatedImages[dropIndex]] = [
-      droppedItem,
-      draggedItem,
-    ];
-
+    const [draggedItem] = updatedImages.splice(dragIndex, 1);
+    updatedImages.splice(dropIndex, 0, draggedItem);
     updateLocalStorageImages(updatedImages);
-
-    // Toggle 'isFeatured' if necessary
-    if (dragIndex === 0 || dropIndex === 0) {
-      toggleFeatured(dragIndex === 0 ? droppedItem.id : draggedItem.id);
+    if (dropIndex === 0) {
+      toggleFeatured(draggedItem.id);
     }
 
-    setDragIndex(null);
+    if (dragIndex === 0) {
+      toggleFeatured(droppedItem.id);
+    }
   };
 
   return { dragIndex, handleDragStart, handleDrop };

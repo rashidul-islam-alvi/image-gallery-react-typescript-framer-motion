@@ -19,23 +19,21 @@ const Header = () => {
         delay: 0.4,
         duration: 0.9,
       }}
-      className="flex flex-col items-center gap-10 mb-10"
+      className={`flex items-center uppercase justify-between text-xl md:text-4xl mb-10 border-b-[1px] py-10   h-10 `}
     >
-      <h2 className="text-6xl cursor-pointer md:text-8xl"> wellgram</h2>
-
-      <div
-        className={`  flex items-center gap-5 text-md sm:text-lg  uppercase md:text-3xl`}
+      <h2>
+        {numberOfSelectedImages === 0
+          ? "Gallery"
+          : numberOfSelectedImages + " items are selected"}
+      </h2>
+      <button
+        onClick={handleDeleteClick}
+        className={`${
+          numberOfSelectedImages === 0 ? "hidden" : "visible"
+        } text-red-400 uppercase `}
       >
-        <h2>{numberOfSelectedImages} items are selected</h2>
-        <button
-          onClick={handleDeleteClick}
-          className={`${
-            numberOfSelectedImages === 0 ? "hidden" : "visible"
-          } text-red-400 uppercase`}
-        >
-          Delete
-        </button>
-      </div>
+        Delete
+      </button>
     </motion.div>
   );
 };

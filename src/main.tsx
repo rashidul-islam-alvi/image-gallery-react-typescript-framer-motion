@@ -11,7 +11,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <ImageProvider>
       <BrowserRouter>
         <App />
-        <Toaster position="top-right" reverseOrder={false} />
+        <Toaster />
       </BrowserRouter>
     </ImageProvider>
   </React.StrictMode>

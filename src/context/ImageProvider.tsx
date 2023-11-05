@@ -57,7 +57,7 @@ export function ImageProvider({ children }: { children: React.ReactNode }) {
   }
 
   // Remove images by its IDs
-  function removeImages(ids: number[]) {
+  function removeSelectedImages(ids: number[]) {
     setLocalStorageImages((prevImages) =>
       prevImages.filter((image) => !ids.includes(image.id))
     );
@@ -67,7 +67,7 @@ export function ImageProvider({ children }: { children: React.ReactNode }) {
     <ImageContext.Provider
       value={{
         images: localStorageImages,
-        removeImages,
+        removeSelectedImages,
         toggleFeatured,
         toggleSelected,
         updateLocalStorageImages,
