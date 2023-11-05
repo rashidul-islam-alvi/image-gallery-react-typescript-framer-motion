@@ -27,7 +27,7 @@ const ImageItem = ({
       onDragOver={(e) => e.preventDefault()}
       className={`z-20 h-[110px] md:h-[250px] ${
         image.isFeatured
-          ? "col-span-2 border-[1px] border-[#ffa371]"
+          ? "col-span-2 border-[2] border-[#ffa371]"
           : "border-transparent"
       } relative border-[1px] hover:border-white cursor-pointer ${
         image.isSelected ? "border-[1px] border-white" : "border-0"
