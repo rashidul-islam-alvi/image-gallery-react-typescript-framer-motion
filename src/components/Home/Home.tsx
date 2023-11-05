@@ -1,4 +1,4 @@
-import { AnimatedText } from "../framer/AnimatedText";
+import { AnimatedText } from "../../framer/AnimatedText";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
@@ -17,7 +17,7 @@ const Home = () => {
   };
   return (
     <div
-      className="flex items-center justify-center h-screen px-5 text-4xl bg-center bg-contain object-fit sm:text-7xl md:text-8xl lg:text-9xl"
+      className="flex items-center justify-center h-screen px-2 text-4xl bg-center bg-contain object-fit sm:text-7xl md:text-8xl lg:text-9xl"
       style={divStyles}
     >
       <motion.div

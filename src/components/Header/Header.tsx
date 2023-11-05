@@ -1,13 +1,10 @@
 import { motion } from "framer-motion";
-import React from "react";
-import { useImages } from "../context/ImageContext";
+import { useImages } from "../../context/ImageContext";
+import { useImageGalleryActions } from "../../hooks/useImageGalleryActions";
 
-interface HeaderProps {
-  handleDeleteClick: () => void;
-}
-
-const Header: React.FC<HeaderProps> = ({ handleDeleteClick }) => {
+const Header = () => {
   const { images } = useImages();
+  const { handleDeleteClick } = useImageGalleryActions();
 
   const numberOfSelectedImages: number = images.filter(
     (image) => image.isSelected
