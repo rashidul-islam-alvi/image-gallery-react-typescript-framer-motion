@@ -44,8 +44,9 @@ To use this image gallery, follow the installation and getting started instructi
 
 ## Screenshots
 ![home](https://github.com/rashidul-islam-alvi/image-gallery-react-typescript-framer-motion/assets/78372197/8965f7fa-8df1-4679-9440-018682451087)
-![gallery](https://github.com/rashidul-islam-alvi/image-gallery-react-typescript-framer-motion/assets/78372197/a43bd93d-dcae-4cd0-8577-b63360b304fa)
-![selected gaallery](https://github.com/rashidul-islam-alvi/image-gallery-react-typescript-framer-motion/assets/78372197/239bc470-2c03-4b0c-9751-506c81ca46cb)
+![gallery](https://github.com/rashidul-islam-alvi/image-gallery-react-typescript-framer-motion/assets/78372197/daa6e8b2-cd5b-4bbe-9e68-f1728c7fbf85)
+![selected gaallery](https://github.com/rashidul-islam-alvi/image-gallery-react-typescript-framer-motion/assets/78372197/b54f00ea-493d-4398-b88c-9ff0e0a236d6)
+
 
 
 ## Live Demo
