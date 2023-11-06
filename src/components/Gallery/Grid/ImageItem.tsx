@@ -25,9 +25,9 @@ const ImageItem = ({
       onDrop={() => handleDrop(index)}
       onDragStart={() => handleDragStart(index)}
       onDragOver={(e) => e.preventDefault()}
-      className={`z-20 h-[110px] md:h-[250px] ${
+      className={` h-[110px] md:h-[250px] ${
         image.isFeatured
-          ? "col-span-2 border-[2] border-[#ffa371]"
+          ? "col-span-2 row-span-2 h-[228px] md:h-[508px] border-[1px] border-[#ffa371]"
           : "border-transparent"
       } relative border-[1px] hover:border-white cursor-pointer ${
         image.isSelected ? "border-[1px] border-white" : "border-0"
@@ -39,7 +39,7 @@ const ImageItem = ({
 
       <img
         src={image.imageUrl}
-        className="z-0 object-cover w-full h-full"
+        className="object-cover w-full h-full "
         alt={image.imageAlt}
         loading="lazy"
       />
